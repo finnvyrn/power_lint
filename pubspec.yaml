@@ -5,3 +5,7 @@ version: 1.0.0+1
 
 environment:
   sdk: ^3.10.7
+
+dependencies:
+  dart_code_linter: ^3.2.1
+  lint: ^2.8.0
