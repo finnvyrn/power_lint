@@ -1,0 +1,7 @@
+name: power_lint
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.7
