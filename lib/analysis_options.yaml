@@ -322,8 +322,8 @@ analyzer:
   enable-experiment:
     - dot-shorthands
   plugins:
-    #- custom_lint
-    - dart_code_linter
+    - custom_lint
+    #- dart_code_linter
   exclude:
     - "**/.dart_tool/**"
     - "**/build/**"
