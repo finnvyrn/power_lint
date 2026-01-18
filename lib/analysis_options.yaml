@@ -321,6 +321,9 @@ analyzer:
     - dart_code_linter
   exclude:
     - "**/.dart_tool/**"
+    - "**/build/**"
+    - "**ios/**"
+    - "**/android/**"
 
     # Comment one to enable IDE refactoring its symbols
     - "**/*.mapper.dart"
