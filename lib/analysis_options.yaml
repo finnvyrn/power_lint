@@ -6,7 +6,7 @@
 # analysis_options.yaml
 custom_lint:
   saropa_lints:
-    tier: insanity  # essential | recommended | professional | comprehensive | insanity
+    tier: comprehensive # essential | recommended | professional | comprehensive | insanity
   rules:
     # https://github.com/solid-software/solid_lints/blob/master/lib/analysis_options.yaml
     - avoid_non_null_assertion: false
@@ -312,7 +312,6 @@ linter:
     use_truncating_division: true
     valid_regexps: true
     void_checks: true
-
 
 analyzer:
   language:
