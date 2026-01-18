@@ -7,5 +7,7 @@ environment:
   sdk: ^3.10.7
 
 dependencies:
-  dart_code_linter: ^3.2.1
+  #dart_code_linter: ^3.2.1
   lint: ^2.8.0
+  custom_lint: ^0.8.1
+  saropa_lints: ^4.1.2
