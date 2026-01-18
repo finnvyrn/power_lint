@@ -7,6 +7,20 @@
 custom_lint:
   saropa_lints:
     tier: insanity  # essential | recommended | professional | comprehensive | insanity
+  rules:
+    # https://github.com/solid-software/solid_lints/blob/master/lib/analysis_options.yaml
+    - avoid_non_null_assertion: false
+
+    # https://pub.dev/packages/leancode_lint
+    - catch_parameter_names: true
+    - prefix_widgets_returning_slivers: true
+    - start_comments_with_space: true
+    - avoid_single_child_in_multi_child_widgets: true
+
+bloc:
+  rules:
+    prefer_bloc: true
+    avoid_public_bloc_methods: false
 
 # https://dcl.apps.bancolombia.com/docs/rules/
 # Do NOT delete. Important experience.
@@ -299,21 +313,6 @@ linter:
     valid_regexps: true
     void_checks: true
 
-custom_lint:
-  rules:
-    # https://github.com/solid-software/solid_lints/blob/master/lib/analysis_options.yaml
-    - avoid_non_null_assertion: false
-
-    # https://pub.dev/packages/leancode_lint
-    - catch_parameter_names: true
-    - prefix_widgets_returning_slivers: true
-    - start_comments_with_space: true
-    - avoid_single_child_in_multi_child_widgets: true
-
-bloc:
-  rules:
-    prefer_bloc: true
-    avoid_public_bloc_methods: false
 
 analyzer:
   language:
