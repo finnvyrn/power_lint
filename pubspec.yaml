@@ -6,8 +6,7 @@ version: 1.0.0+1
 environment:
   sdk: ^3.10.7
 
-dependencies:
-  lint: ^2.8.0
-  custom_lint: ^0.8.1
-  saropa_lints: ^4.5.0
-  #dart_code_linter: ^3.2.1
+# Packages that use the lint must include the following pakcages in their dev_dependencies:
+# lint: ^2.8.0
+# custom_lint: ^0.8.1
+# saropa_lints: ^4.5.0
