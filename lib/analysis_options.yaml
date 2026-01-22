@@ -1,6 +1,11 @@
+# https://dart.dev/tools/analysis
+# https://dart.dev/tools/linter-rules
+# https://dart.dev/tools/linter-rules/all
+# https://dart.dev/tools#ides-and-editors
+
 #include: package:solid_lints/analysis_options.yaml
 # https://github.com/passsy/dart-lint/blob/master/lib/strict.yaml
-# include: package:lint/strict.yaml
+include: package:lint/strict.yaml
 # The following syntax didn't work, even when only having an item, despite the docs:
 # https://dart.dev/tools/analysis#including-shared-options
 #include:
@@ -50,6 +55,11 @@
 #     - prefer-extracting-callbacks: false
 # #    - prefer-commenting-analyzer-ignores: false
 
+custom_lint:
+  saropa_lints:
+    tier: insanity # essential | recommended | professional | comprehensive | insanity
+    enable_all_lint_rules: true
+
 analyzer:
   language:
     strict-casts: true
@@ -92,16 +102,6 @@ analyzer:
     depend_on_referenced_packages: ignore
 #    final_not_initialized_constructor: ignore
 #    not_initialized_non_nullable_instance_field: ignore
-
-# https://dart.dev/tools/analysis
-# https://dart.dev/tools/linter-rules
-# https://dart.dev/tools/linter-rules/all
-# https://dart.dev/tools#ides-and-editors
-# analysis_options.yaml
-custom_lint:
-  saropa_lints:
-    tier: insanity # essential | recommended | professional | comprehensive | insanity
-    enable_all_lint_rules: true
 
 linter:
   rules:
