@@ -302,31 +302,31 @@ analyzer:
   plugins:
     - custom_lint
     #- dart_code_linter
-  exclude:
-    - "**/.dart_tool/**"
-    - "**/build/**"
-    - "**ios/**"
-    - "**/android/**"
-    # Comment one to enable IDE refactoring its symbols
-    - "**/*.mapper.dart"
-    # General generated files
-    - "**/generated/**"
-    - "**/*.g.dart"
-    - "**/*.gr.dart"
-    # Flutter
-    - "lib/generated_plugin_registrant.dart"
-    # Serverpod
-    - "**/serverpod_test_tools.dart"
-    - "**/lib/src/protocol/**"
-    # mockito
-    - "*.mocks.dart"
-    - "**/*.mocks.dart"
-    # freezed
-    - "**/*.freezed.dart"
-    # protobuf
-    - "**/*.pb.dart"
-    # test_coverage
-    - "test/.test_coverage.dart"
+  # exclude:
+  #   - "**/.dart_tool/**"
+  #   - "**/build/**"
+  #   - "**ios/**"
+  #   - "**/android/**"
+  #   # Comment one to enable IDE refactoring its symbols
+  #   - "**/*.mapper.dart"
+  #   # General generated files
+  #   - "**/generated/**"
+  #   - "**/*.g.dart"
+  #   - "**/*.gr.dart"
+  #   # Flutter
+  #   - "lib/generated_plugin_registrant.dart"
+  #   # Serverpod
+  #   - "**/serverpod_test_tools.dart"
+  #   - "**/lib/src/protocol/**"
+  #   # mockito
+  #   - "*.mocks.dart"
+  #   - "**/*.mocks.dart"
+  #   # freezed
+  #   - "**/*.freezed.dart"
+  #   # protobuf
+  #   - "**/*.pb.dart"
+  #   # test_coverage
+  #   - "test/.test_coverage.dart"
   errors:
     #    body_might_complete_normally: ignore # incompatible with dart_code_runner's avoid-redundant-async
     avoid_classes_with_only_static_members: ignore
