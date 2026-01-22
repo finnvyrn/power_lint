@@ -1,11 +1,17 @@
-# https://dart.dev/tools/analysis
-# https://dart.dev/tools/linter-rules
-# https://dart.dev/tools/linter-rules/all
-# https://dart.dev/tools#ides-and-editors
-# analysis_options.yaml
-custom_lint:
-  saropa_lints:
-    tier: insanity # essential | recommended | professional | comprehensive | insanity
+#include: package:solid_lints/analysis_options.yaml
+# https://github.com/passsy/dart-lint/blob/master/lib/strict.yaml
+# include: package:lint/strict.yaml
+# The following syntax didn't work, even when only having an item, despite the docs:
+# https://dart.dev/tools/analysis#including-shared-options
+#include:
+#  - package:flutter_lints/flutter.yaml
+#  - package:lint/strict.yaml
+#  - package:surf_lint_rules/analysis_options.yaml
+#  - package:leancode_lint/analysis_options.yaml
+#  - package:very_good_analysis/analysis_options.yaml
+#  - package:bloc_lint/recommended.yaml
+#  - package:solid_lints/analysis_options.yaml
+
 # https://dcl.apps.bancolombia.com/docs/rules/
 # Do NOT delete. Important experience.
 # dart_code_linter:
@@ -44,19 +50,59 @@ custom_lint:
 #     - prefer-extracting-callbacks: false
 # #    - prefer-commenting-analyzer-ignores: false
 
-#include: package:solid_lints/analysis_options.yaml
-# https://github.com/passsy/dart-lint/blob/master/lib/strict.yaml
-include: package:lint/strict.yaml
-# The following syntax didn't work, even when only having an item, despite the docs:
-# https://dart.dev/tools/analysis#including-shared-options
-#include:
-#  - package:flutter_lints/flutter.yaml
-#  - package:lint/strict.yaml
-#  - package:surf_lint_rules/analysis_options.yaml
-#  - package:leancode_lint/analysis_options.yaml
-#  - package:very_good_analysis/analysis_options.yaml
-#  - package:bloc_lint/recommended.yaml
-#  - package:solid_lints/analysis_options.yaml
+analyzer:
+  language:
+    strict-casts: true
+    strict-inference: true
+    strict-raw-types: true
+  enable-experiment:
+    - dot-shorthands
+  plugins:
+    - custom_lint
+    #- dart_code_linter
+  # exclude:
+  #   - "**/.dart_tool/**"
+  #   - "**/build/**"
+  #   - "**ios/**"
+  #   - "**/android/**"
+  #   # Comment one to enable IDE refactoring its symbols
+  #   - "**/*.mapper.dart"
+  #   # General generated files
+  #   - "**/generated/**"
+  #   - "**/*.g.dart"
+  #   - "**/*.gr.dart"
+  #   # Flutter
+  #   - "lib/generated_plugin_registrant.dart"
+  #   # Serverpod
+  #   - "**/serverpod_test_tools.dart"
+  #   - "**/lib/src/protocol/**"
+  #   # mockito
+  #   - "*.mocks.dart"
+  #   - "**/*.mocks.dart"
+  #   # freezed
+  #   - "**/*.freezed.dart"
+  #   # protobuf
+  #   - "**/*.pb.dart"
+  #   # test_coverage
+  #   - "test/.test_coverage.dart"
+  errors:
+    #    body_might_complete_normally: ignore # incompatible with dart_code_runner's avoid-redundant-async
+    avoid_classes_with_only_static_members: ignore
+    invalid_use_of_visible_for_testing_member: ignore # It prevented using the emit class in Bloc helper methods.
+    depend_on_referenced_packages: ignore
+#    final_not_initialized_constructor: ignore
+#    not_initialized_non_nullable_instance_field: ignore
+
+# https://dart.dev/tools/analysis
+# https://dart.dev/tools/linter-rules
+# https://dart.dev/tools/linter-rules/all
+# https://dart.dev/tools#ides-and-editors
+# analysis_options.yaml
+custom_lint:
+  saropa_lints:
+    tier: insanity # essential | recommended | professional | comprehensive | insanity
+    enable_all_lint_rules: true
+
 linter:
   rules:
     # Should be enabled by experience
@@ -292,45 +338,3 @@ linter:
     use_truncating_division: true
     valid_regexps: true
     void_checks: true
-analyzer:
-  language:
-    strict-casts: true
-    strict-inference: true
-    strict-raw-types: true
-  enable-experiment:
-    - dot-shorthands
-  plugins:
-    - custom_lint
-    #- dart_code_linter
-  # exclude:
-  #   - "**/.dart_tool/**"
-  #   - "**/build/**"
-  #   - "**ios/**"
-  #   - "**/android/**"
-  #   # Comment one to enable IDE refactoring its symbols
-  #   - "**/*.mapper.dart"
-  #   # General generated files
-  #   - "**/generated/**"
-  #   - "**/*.g.dart"
-  #   - "**/*.gr.dart"
-  #   # Flutter
-  #   - "lib/generated_plugin_registrant.dart"
-  #   # Serverpod
-  #   - "**/serverpod_test_tools.dart"
-  #   - "**/lib/src/protocol/**"
-  #   # mockito
-  #   - "*.mocks.dart"
-  #   - "**/*.mocks.dart"
-  #   # freezed
-  #   - "**/*.freezed.dart"
-  #   # protobuf
-  #   - "**/*.pb.dart"
-  #   # test_coverage
-  #   - "test/.test_coverage.dart"
-  errors:
-    #    body_might_complete_normally: ignore # incompatible with dart_code_runner's avoid-redundant-async
-    avoid_classes_with_only_static_members: ignore
-    invalid_use_of_visible_for_testing_member: ignore # It prevented using the emit class in Bloc helper methods.
-    depend_on_referenced_packages: ignore
-#    final_not_initialized_constructor: ignore
-#    not_initialized_non_nullable_instance_field: ignore
