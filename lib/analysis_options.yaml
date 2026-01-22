@@ -5,7 +5,7 @@
 
 #include: package:solid_lints/analysis_options.yaml
 # https://github.com/passsy/dart-lint/blob/master/lib/strict.yaml
-include: package:lint/strict.yaml
+# include: package:lint/strict.yaml
 # The following syntax didn't work, even when only having an item, despite the docs:
 # https://dart.dev/tools/analysis#including-shared-options
 #include:
@@ -70,44 +70,55 @@ analyzer:
   plugins:
     - custom_lint
     #- dart_code_linter
-  # exclude:
-  #   - "**/.dart_tool/**"
-  #   - "**/build/**"
-  #   - "**ios/**"
-  #   - "**/android/**"
-  #   # Comment one to enable IDE refactoring its symbols
-  #   - "**/*.mapper.dart"
-  #   # General generated files
-  #   - "**/generated/**"
-  #   - "**/*.g.dart"
-  #   - "**/*.gr.dart"
-  #   # Flutter
-  #   - "lib/generated_plugin_registrant.dart"
-  #   # Serverpod
-  #   - "**/serverpod_test_tools.dart"
-  #   - "**/lib/src/protocol/**"
-  #   # mockito
-  #   - "*.mocks.dart"
-  #   - "**/*.mocks.dart"
-  #   # freezed
-  #   - "**/*.freezed.dart"
-  #   # protobuf
-  #   - "**/*.pb.dart"
-  #   # test_coverage
-  #   - "test/.test_coverage.dart"
+  exclude:
+    - "**/.dart_tool/**"
+    - "**/build/**"
+    - "**ios/**"
+    - "**/android/**"
+    # Comment one to enable IDE refactoring its symbols
+    - "**/*.mapper.dart"
+    # General generated files
+    - "**/generated/**"
+    - "**/*.g.dart"
+    - "**/*.gr.dart"
+    # Flutter
+    - "lib/generated_plugin_registrant.dart"
+    # Serverpod
+    - "**/serverpod_test_tools.dart"
+    - "**/lib/src/protocol/**"
+    # mockito
+    - "*.mocks.dart"
+    - "**/*.mocks.dart"
+    # freezed
+    - "**/*.freezed.dart"
+    # protobuf
+    - "**/*.pb.dart"
+    # test_coverage
+    - "test/.test_coverage.dart"
   errors:
-    #    body_might_complete_normally: ignore # incompatible with dart_code_runner's avoid-redundant-async
-    avoid_classes_with_only_static_members: ignore
-    invalid_use_of_visible_for_testing_member: ignore # It prevented using the emit class in Bloc helper methods.
     depend_on_referenced_packages: ignore
-#    final_not_initialized_constructor: ignore
-#    not_initialized_non_nullable_instance_field: ignore
+    body_might_complete_normally: error # incompatible with dart_code_runner's avoid-redundant-async
+    avoid_classes_with_only_static_members: ignore
+    invalid_use_of_visible_for_testing_member: error # It prevented using the emit class in Bloc helper methods.
+    final_not_initialized_constructor: error
+    not_initialized_non_nullable_instance_field: error
+
+    # https://github.com/passsy/dart-lint/blob/master/lib/strict.yaml
+    # treat missing required parameters as an error (not a hint)
+    missing_required_param: error
+    # treat missing returns as an error (not a hint)
+    missing_return: error
+    # allow having TODOs in code
+    todo: ignore
+    # Reassignment should be treated as warning (not a hint)
+    parameter_assignments: warning
 
 linter:
   rules:
     # Should be enabled by experience
     prefer_single_quotes: true
     avoid_final_parameters: true
+
     # Should be disabled by experience
     public_member_api_docs: false
     sort_pub_dependencies: false
@@ -129,6 +140,7 @@ linter:
     one_member_abstracts: false
     avoid_positional_boolean_parameters: false # incompatible with dart_mappable constructors
     prefer_asserts_with_message: false
+
     # Copied from official site
     always_declare_return_types: true
     always_put_control_body_on_new_line: true
