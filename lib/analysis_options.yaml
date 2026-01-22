@@ -2,26 +2,10 @@
 # https://dart.dev/tools/linter-rules
 # https://dart.dev/tools/linter-rules/all
 # https://dart.dev/tools#ides-and-editors
-
 # analysis_options.yaml
 custom_lint:
   saropa_lints:
-    tier: recommended # essential | recommended | professional | comprehensive | insanity
-  rules:
-    # https://github.com/solid-software/solid_lints/blob/master/lib/analysis_options.yaml
-    - avoid_non_null_assertion: false
-
-    # https://pub.dev/packages/leancode_lint
-    - catch_parameter_names: true
-    - prefix_widgets_returning_slivers: true
-    - start_comments_with_space: true
-    - avoid_single_child_in_multi_child_widgets: true
-
-bloc:
-  rules:
-    prefer_bloc: true
-    avoid_public_bloc_methods: false
-
+    tier: insanity # essential | recommended | professional | comprehensive | insanity
 # https://dcl.apps.bancolombia.com/docs/rules/
 # Do NOT delete. Important experience.
 # dart_code_linter:
@@ -63,7 +47,6 @@ bloc:
 #include: package:solid_lints/analysis_options.yaml
 # https://github.com/passsy/dart-lint/blob/master/lib/strict.yaml
 include: package:lint/strict.yaml
-
 # The following syntax didn't work, even when only having an item, despite the docs:
 # https://dart.dev/tools/analysis#including-shared-options
 #include:
@@ -74,13 +57,11 @@ include: package:lint/strict.yaml
 #  - package:very_good_analysis/analysis_options.yaml
 #  - package:bloc_lint/recommended.yaml
 #  - package:solid_lints/analysis_options.yaml
-
 linter:
   rules:
     # Should be enabled by experience
     prefer_single_quotes: true
     avoid_final_parameters: true
-
     # Should be disabled by experience
     public_member_api_docs: false
     sort_pub_dependencies: false
@@ -102,7 +83,6 @@ linter:
     one_member_abstracts: false
     avoid_positional_boolean_parameters: false # incompatible with dart_mappable constructors
     prefer_asserts_with_message: false
-
     # Copied from official site
     always_declare_return_types: true
     always_put_control_body_on_new_line: true
@@ -312,7 +292,6 @@ linter:
     use_truncating_division: true
     valid_regexps: true
     void_checks: true
-
 analyzer:
   language:
     strict-casts: true
@@ -328,32 +307,24 @@ analyzer:
     - "**/build/**"
     - "**ios/**"
     - "**/android/**"
-
     # Comment one to enable IDE refactoring its symbols
     - "**/*.mapper.dart"
-
     # General generated files
     - "**/generated/**"
     - "**/*.g.dart"
     - "**/*.gr.dart"
-
     # Flutter
     - "lib/generated_plugin_registrant.dart"
-
     # Serverpod
     - "**/serverpod_test_tools.dart"
     - "**/lib/src/protocol/**"
-
     # mockito
     - "*.mocks.dart"
     - "**/*.mocks.dart"
-
     # freezed
     - "**/*.freezed.dart"
-
     # protobuf
     - "**/*.pb.dart"
-
     # test_coverage
     - "test/.test_coverage.dart"
   errors:
