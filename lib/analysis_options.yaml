@@ -55,10 +55,9 @@
 #     - prefer-extracting-callbacks: false
 # #    - prefer-commenting-analyzer-ignores: false
 
-custom_lint:
-  saropa_lints:
-    tier: insanity # essential | recommended | professional | comprehensive | insanity
-    enable_all_lint_rules: true
+# custom_lint:
+#   saropa_lints:
+#     tier: essential
 
 analyzer:
   language:
