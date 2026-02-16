@@ -2,7 +2,6 @@
 # https://dart.dev/tools/linter-rules
 # https://dart.dev/tools/linter-rules/all
 # https://dart.dev/tools#ides-and-editors
-
 include: package:solid_lints/analysis_options.yaml
 # https://github.com/passsy/dart-lint/blob/master/lib/strict.yaml
 # include: package:lint/strict.yaml
@@ -50,7 +49,6 @@ dart_code_linter:
         acceptable-level: 4
     - prefer-trailing-comma: false # Conflicts with the formatter, which already covers most cases but not some
     - no-empty-block: false
-
     # Maybe enabled when at a team
     - prefer-extracting-callbacks: false
 #    - prefer-commenting-analyzer-ignores: false
@@ -58,7 +56,6 @@ dart_code_linter:
 # custom_lint:
 #   saropa_lints:
 #     tier: essential
-
 analyzer:
   language:
     strict-casts: true
@@ -67,8 +64,8 @@ analyzer:
   enable-experiment:
     - dot-shorthands
   plugins:
-    - custom_lint
-    #- dart_code_linter
+    #- custom_lint
+    - dart_code_linter
   exclude:
     - "**/.dart_tool/**"
     - "**/build/**"
@@ -101,7 +98,6 @@ analyzer:
     invalid_use_of_visible_for_testing_member: error # It prevented using the emit class in Bloc helper methods.
     final_not_initialized_constructor: error
     not_initialized_non_nullable_instance_field: error
-
     # https://github.com/passsy/dart-lint/blob/master/lib/strict.yaml
     # treat missing required parameters as an error (not a hint)
     missing_required_param: error
@@ -111,13 +107,11 @@ analyzer:
     todo: ignore
     # Reassignment should be treated as warning (not a hint)
     parameter_assignments: warning
-
 linter:
   rules:
     # Should be enabled by experience
     prefer_single_quotes: true
     avoid_final_parameters: true
-
     # Should be disabled by experience
     public_member_api_docs: false
     sort_pub_dependencies: false
@@ -139,7 +133,6 @@ linter:
     one_member_abstracts: false
     avoid_positional_boolean_parameters: false # incompatible with dart_mappable constructors
     prefer_asserts_with_message: false
-
     # Copied from official site
     always_declare_return_types: true
     always_put_control_body_on_new_line: true
