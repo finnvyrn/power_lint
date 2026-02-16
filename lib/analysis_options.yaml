@@ -3,7 +3,7 @@
 # https://dart.dev/tools/linter-rules/all
 # https://dart.dev/tools#ides-and-editors
 
-#include: package:solid_lints/analysis_options.yaml
+include: package:solid_lints/analysis_options.yaml
 # https://github.com/passsy/dart-lint/blob/master/lib/strict.yaml
 # include: package:lint/strict.yaml
 # The following syntax didn't work, even when only having an item, despite the docs:
@@ -19,41 +19,41 @@
 
 # https://dcl.apps.bancolombia.com/docs/rules/
 # Do NOT delete. Important experience.
-# dart_code_linter:
-#   extends:
-#     - package:dart_code_linter/presets/all.yaml
-#   rules:
-#     - format-comment: false
-#     - avoid-non-null-assertion: false
-#     - no-magic-number: false
-#     - prefer-correct-identifier-length: false
-#     - prefer-correct-type-name: false
-#     - prefer-static-class: false
-#     #        ignore-annotations:
-#     #          - riverpod
-#     #        ignore-private: true
-#     #        ignore-names:
-#     #          - (.*)Provider
-#     #          - use(.*)
-#     - avoid-dynamic: false
-#     - avoid-ignoring-return-values: false
-#     - avoid-late-keyword: false
-#     #    - avoid-redundant-async: false # Incompatible with Dart's enforced diagnostic message: body_might_complete_normally
-#     - prefer-single-widget-per-file: false
-#       # - arguments-ordering:
-#       # child-last: true # to be compatible with https://dart.dev/tools/linter-rules/sort_child_properties_last
-#     - arguments-ordering: false # This removed comments
-#     - no-equal-arguments: false
-#     # - avoid-unused-parameters: false
-#     #    - prefer-first: false # This is annoying when you have value[0], value[1], value[2]...
-#     - avoid-nested-conditional-expressions:
-#         acceptable-level: 4
-#     - prefer-trailing-comma: false # Conflicts with the formatter, which already covers most cases but not some
-#     - no-empty-block: false
+dart_code_linter:
+  extends:
+    - package:dart_code_linter/presets/all.yaml
+  rules:
+    - format-comment: false
+    - avoid-non-null-assertion: false
+    - no-magic-number: false
+    - prefer-correct-identifier-length: false
+    - prefer-correct-type-name: false
+    - prefer-static-class: false
+    #        ignore-annotations:
+    #          - riverpod
+    #        ignore-private: true
+    #        ignore-names:
+    #          - (.*)Provider
+    #          - use(.*)
+    - avoid-dynamic: false
+    - avoid-ignoring-return-values: false
+    - avoid-late-keyword: false
+    #    - avoid-redundant-async: false # Incompatible with Dart's enforced diagnostic message: body_might_complete_normally
+    - prefer-single-widget-per-file: false
+      # - arguments-ordering:
+      # child-last: true # to be compatible with https://dart.dev/tools/linter-rules/sort_child_properties_last
+    - arguments-ordering: false # This removed comments
+    - no-equal-arguments: false
+    # - avoid-unused-parameters: false
+    #    - prefer-first: false # This is annoying when you have value[0], value[1], value[2]...
+    - avoid-nested-conditional-expressions:
+        acceptable-level: 4
+    - prefer-trailing-comma: false # Conflicts with the formatter, which already covers most cases but not some
+    - no-empty-block: false
 
-#     # Maybe enabled when at a team
-#     - prefer-extracting-callbacks: false
-# #    - prefer-commenting-analyzer-ignores: false
+    # Maybe enabled when at a team
+    - prefer-extracting-callbacks: false
+#    - prefer-commenting-analyzer-ignores: false
 
 # custom_lint:
 #   saropa_lints:
